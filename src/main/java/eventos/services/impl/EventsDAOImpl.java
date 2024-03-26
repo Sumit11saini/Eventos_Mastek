@@ -30,7 +30,7 @@ public class EventsDAOImpl implements EventsDAOInterface {
             conn.setAutoCommit(false); // Start transaction
 
             // Insert event data
-            String insertEventSQL = "INSERT INTO tbl_events(event_name, event_venue, eventCategory, event_city, event_date_time, event_description, eventBanner, organizer_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String insertEventSQL = "INSERT INTO tbl_events(event_name, event_venue, event_category, event_city, event_date_time, event_description, event_banner, organizer_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             psEvent = conn.prepareStatement(insertEventSQL);
             psEvent.setString(1, event.getEventName());
             psEvent.setString(2, event.getEventVenue());
