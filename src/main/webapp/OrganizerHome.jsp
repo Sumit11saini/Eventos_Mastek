@@ -70,18 +70,17 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand nigga" href="index.html"><h1
+					<a class="navbar-brand nigga" href="OrganizerEventsServlet"><h1
 							class="logotxt">
 							<h1>Eventos</h1>
 						</h1></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="OrganizerEvents.jsp">Home</a></li>
-						<li><a href="about-us.html">About us</a></li>
-						<li><a href="events.html">Events</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li><a href="OrganizerHome.jsp">Profile</a></li>
+						<li><a  href="OrganizerEventsServlet">Home</a></li>
+                        <li><a  href="Organizer-AboutUs.jsp">About us</a></li>
+                        <li><a href="OrganizerContact.jsp">Contact</a></li>
+						<li><a class="active" href="OrganizerHome.jsp">Profile</a></li>
 					</ul>
 				</div>
 			</div>

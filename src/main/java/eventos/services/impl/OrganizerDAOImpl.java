@@ -186,6 +186,7 @@ public class OrganizerDAOImpl implements OrganizerDAOInterface {
 	public int getOrganizerIdByEmail(String email) {
         int organizerId = -1; // Default value if organizer is not found
         String organizerName=null;
+        System.out.println("getOrganizerIdByEmail");
 
         try (Connection db = dbutil.provideConnection();
              PreparedStatement statement = db.prepareStatement("SELECT ORGANIZER_ID from tbl_organizers where organizer_email=?")) {
@@ -199,8 +200,7 @@ public class OrganizerDAOImpl implements OrganizerDAOInterface {
                 // If a record is found, retrieve organizer_id
                 if (resultSet.next()) {
                     organizerId = resultSet.getInt("ORGANIZER_ID");
-                    organizerName = resultSet.getString("ORGANIZER_NAME");
-      
+                    System.out.println(organizerId);
                 }
             }
         } catch (SQLException e) {

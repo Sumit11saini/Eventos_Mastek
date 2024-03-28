@@ -95,7 +95,7 @@ public class EventsRegisterServlet extends HttpServlet {
             // Redirecting based on registration status
             if ("Event Registered Successfully".equals(status)) {
                 // If the event and tickets are successfully registered
-                RequestDispatcher rd = request.getRequestDispatcher("Succesfully registered");
+                RequestDispatcher rd = request.getRequestDispatcher("OrganizerEvents.jsp");
                 rd.forward(request, response);
             } else {
                 // Handle registration failure

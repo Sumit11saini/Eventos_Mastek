@@ -112,6 +112,8 @@ public class EventsDAOImpl implements EventsDAOInterface {
 	public List<Events> getEventDetailsByOrganizerId(int OrganizerId) {
 		List<Events> events = new ArrayList<Events>();
 		int organizerId=OrganizerId;
+        System.out.println("in main block");
+
 
 		Connection con = dbutil.provideConnection();
 
@@ -135,7 +137,7 @@ public class EventsDAOImpl implements EventsDAOInterface {
 				event.setEventCity(rs.getString(5));
 				event.setEventDateTime(rs.getTimestamp(6));
 				event.setEventDescription(rs.getString(7));
-				event.setEventBanner(rs.getString(7));
+				event.setEventBanner(rs.getString(8));
 
 				events.add(event);
 

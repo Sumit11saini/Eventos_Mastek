@@ -43,6 +43,9 @@ public class CustomerLoginServlet extends HttpServlet {
 				// valid user
 				
 				System.out.println("Sign in Succesful");
+				HttpSession session = request.getSession();
+				session.setAttribute("IsOrganizer", false);	
+				session.setAttribute("userRole","Customer");
 
 				RequestDispatcher rd = request.getRequestDispatcher("index.html");
 

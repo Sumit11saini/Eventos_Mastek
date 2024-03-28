@@ -25,7 +25,7 @@ public class dbutil {
                     e.printStackTrace();
                 }
                 conn = DriverManager.getConnection(connectionString, username, password);
-                System.out.println("Connection Successful");
+                System.out.println("Connection Successful in DataBase");
             }
         } catch (SQLException e) {
             e.printStackTrace();

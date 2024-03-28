@@ -1,12 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
-<%@page import="eventos.models.Events"%>
-<%@page import="java.util.List"%>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<!-- Site Icons -->
 <link rel="apple-touch-icon" sizes="180x180"
 	href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32"
@@ -51,6 +43,7 @@
 
 </head>
 <body>
+
 	<!-- LOADER -->
 	<div id="preloader">
 		<div class="loader">
@@ -66,64 +59,64 @@
 	<!-- END LOADER -->
 
 
-	    <%@ include file="navbar.jsp" %>
-	    
-	   
-            <div class="section-title text-center">
-                <h3>Your Events</h3>
-            </div>
-	    
-	    
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<nav class="portfolio-filter text-center">
-					<ul>
-						<li><a class="btn btn-dark btn-radius btn-brd active"
-							href="#" data-filter="*"><span class="oi hidden-xs"
-								data-glyph="grid-three-up"></span> All</a></li>
-						<li><a class="btn btn-dark btn-radius btn-brd"
-							data-toggle="tooltip" data-placement="top" title="" href="#"
-							data-filter=".cat1">Stand-up</a></li>
-						<li><a class="btn btn-dark btn-radius btn-brd" href="#"
-							data-toggle="tooltip" data-placement="top" title=""
-							data-filter=".cat2">concerts</a></li>
-						<li><a class="btn btn-dark btn-radius btn-brd" href="#"
-							data-toggle="tooltip" data-placement="top" title=""
-							data-filter=".cat3">Heritage Walks</a></li>
-						<li><a class="btn btn-dark btn-radius btn-brd" href="#"
-							data-toggle="tooltip" data-placement="top" title=""
-							data-filter=".cat4">Others</a></li>
-					</ul>
-				</nav>
+	<%@ include file="navbar.jsp"%>
+
+
+
+	<div id="contact" class="section wb">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>Get in touch</h3>
+				<p class="lead">Get in touch with us! We're here to assist you
+					every step of the way. Whether you have questions about our
+					services, need help with an existing event listing, or just want to
+					say hello, we'd love to hear from you.</p>
 			</div>
+			<!-- end title -->
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="contact_form">
+						<div id="message"></div>
+						<form id="contactform" class="row" action="contact.php"
+							name="contactform" method="post">
+							<fieldset class="row-fluid">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="text" name="first_name" id="first_name"
+										class="form-control" placeholder="First Name">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="text" name="last_name" id="last_name"
+										class="form-control" placeholder="Last Name">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="email" name="email" id="email"
+										class="form-control" placeholder="Your Email">
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<input type="text" name="phone" id="phone" class="form-control"
+										placeholder="Your Phone">
+								</div>
+
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<textarea class="form-control" name="comments" id="comments"
+										rows="6" placeholder="Give us more details.."></textarea>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+									<button class="button-40" role="button">Send</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<!-- end col -->
+			</div>
+			<!-- end row -->
 		</div>
-
-		<hr class="invis">
-		
-		
-		 <div id="da-thumbs" class="da-thumbs portfolio">
-    <c:forEach var="event" items="${eventsList}">
-        <div class="post-media pitem item-w1 item-h1 cat1">
-            <a href="${event.eventBanner}" data-rel="prettyPhoto[gal]">
-                <img src="${event.eventBanner}" alt="" class="img-responsive">
-                <div>
-                    <h3>${event.eventName} <small>${event.eventCity}</small></h3>
-                    <i class="flaticon-unlink"></i>
-                </div>
-            </a>
-        </div>
-    </c:forEach>
-</div>
-    </div><!-- end section -->
-	
-	
-
-
-
-
-
-
+		<!-- end container -->
+	</div>
+	<!-- end section -->
+	<br>
 
 	<footer class="footer">
 		<div class="container">
@@ -157,7 +150,7 @@
 									class="icon icon-arrow-right2"></span></a></li>
 							<li><a href="OrganizerContact.jsp">Contact <span
 									class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="OrganizerHome.jsp">Profile <span
+							<li><a href="organizerLogin.html">Login <span
 									class="icon icon-arrow-right2"></span></a></li>
 						</ul>
 						<!-- end links -->

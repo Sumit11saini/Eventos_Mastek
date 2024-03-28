@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
@@ -37,12 +36,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
-    
-
-
 </head>
-<body>  
+<body>
+
     <!-- LOADER -->
     <div id="preloader">
         <div class="loader">
@@ -56,65 +52,79 @@
     </div><!-- end loader -->
     <!-- END LOADER -->
     
-	
-   < <header class="header header_style_01">
+<%--
+    <header class="header header_style_01">
         <nav class="megamenu navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>	
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand nigga" href="index.html"><h1 class="logotxt"><h1>Eventos</h1></h1></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="OrganizerEvents.jsp">Home</a></li>
-                        <li><a href="Organizer-AboutUs.jsp">About us</a></li>
+                        <li><a href="OrganizerEventsServlet">Home</a></li>
+                        <li><a class="active" href="Organizer-AboutUs.jsp">About us</a></li>
                         <li><a href="OrganizerContact.jsp">Contact</a></li>
-                        <li><a class="active" href="CustomerLogin.html">Login</a></li>     
+                        <li><a href="organizerLogin.html">Login</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    
+    --%>
+    <%@ include file="navbar.jsp" %>
+
+   	 <div id="about" class="section wb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="message-box">
+                        <h4>About Us</h4>
+                        <h2>Welcome to Eventos</h2>
+                        <p class="lead">Welcome to Eventos, your premier destination for hassle-free event ticket booking. <br><br>
+                        With a vast array of entertainment options at your fingertips, we simplify the process of securing your spot at your favorite events. Our user-friendly platform, secure payment options, and dedicated customer support ensure a seamless experience from start to finish. Join us and embark on a journey filled with unforgettable experiences! </p>
+
+                        <button class="button-40" role="button">Book now!</button>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+
+                <div class="col-md-6">
+                    <div class="post-media wow fadeIn">
+                        <img src="uploads/about_01.jpg" alt="" class="img-responsive img-rounded">
+                        <!-- <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a> -->
+                    </div><!-- end media -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="hr1"> 
+
+            <div class="row">
+				<div class="col-md-6">
+                    <div class="post-media wow fadeIn">
+                        <img src="uploads/about_02.jpg" alt="" class="img-responsive img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+				
+                <div class="col-md-6">
+                    <div class="message-box">
+                        <h4>Who We are</h4>
+                        <h2>Why choose us?</h2>
+                        <p class="lead">Why Choose Us? At Eventos, we're not just a ticket booking platform; we're your ultimate gateway to unforgettable experiences. With a commitment to simplicity and convenience, we offer a seamless booking process. Our extensive selection of events caters to every taste, ensuring there's something for everyone. <br><br> Plus, with competitive pricing and exclusive deals, we guarantee exceptional value for every ticket purchased.</p>
+
+                        <button class="button-40" role="button">Events</button>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
 
     
-    
-   
-    <div class="login1"><img src="uploads/login1.webp" alt="" class="loginimg">
-        <div class="wrapper">
-            <h2>Organization Login</h2>
-            <form action="organizerLogin" method="post">
-              <!-- <div class="input-box">
-                <input type="text" placeholder="Enter your name" required>
-              </div> -->
-              <div class="input-box">
-                <input type="text" name="email" id="email" placeholder="Email" required>
-              </div>
-               <div class="input-box">
-                <input type="password"name="password" id="password" placeholder="Password" required>
-              </div>
-              <!-- <div class="input-box">
-                <input type="password" placeholder="Confirm password" required>
-              </div>  -->
-              <!-- <div class="policy">
-                <input type="checkbox">
-                <h3> <br>I accept all terms & condition</h3>
-              </div> -->
-              <div class="input-box button">
-               <a href="OrganizerEvents.jsp"> <input type="Submit" value="Login"> </a>
-              </div>
-              <div class="text">
-                <h3>Do not have an account? <a href="organizerRegister.html">Register now</a></h3>
-              </div>
-            </form>
-          </div>
-    </div>
-
-
 
     <footer class="footer">
         <div class="container">
@@ -156,16 +166,11 @@
 								<input placeholder="Subscribe our newsletter.." name="search">
 								<i class="fa fa-envelope-o"></i>
 							</form>
-
 						</div>                        
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
             </div><!-- end row -->
-            <div class="organreg">
-              <a href="login2.html"><h4>Login as an Organization</h4></a>
-            </div>
         </div><!-- end container -->
-        
     </footer><!-- end footer -->
 
     <div class="copyrights">
@@ -188,5 +193,6 @@
     <script src="js/custom.js"></script>
     <script src="js/portfolio.js"></script>
     <script src="js/hoverdir.js"></script>    
+
 </body>
 </html>
