@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,36 +54,7 @@
     </div><!-- end loader -->
     <!-- END LOADER -->
     
-	
-    <header class="header header_style_01">
-        <nav class="megamenu navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand nigga" href="index.html"><h1 class="logotxt"><h1>Eventos</h1></h1></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About us</a></li>
-                        <li><a class="active" href="events.html">Events</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="userLogin.html">Login</a></li>
-                       <!-- <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="pricing.html">Pricing</a></li> -->
-						
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+	<%@ include file="customernavbar.jsp"%>
 
    	<div class="banner-area banner-bg-1">
 		<div class="container">
@@ -120,100 +93,19 @@
 
             <hr class="invis">
 
-            <div id="da-thumbs" class="da-thumbs portfolio">
-                <div class="post-media pitem item-w1 item-h1 cat1">
-                    <a href="uploads/e1.webp" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e1.webp" alt="" class="img-responsive">
-                        <div>
-                            <h3>Abhishek Upmanyu <small>Bhopal</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
+           <div id="da-thumbs" class="da-thumbs portfolio">
+    <c:forEach var="event" items="${events}">
+        <div class="post-media pitem item-w1 item-h1 ${event.eventCategory}">
+            <a href="${event.eventBanner}" data-rel="prettyPhoto[gal]">
+                <img src="${event.getEventBanner()}" alt="" class="img-responsive">
+                <div>
+                    <h3>${event.eventName} <small>${event.eventCity}</small></h3>
+                    <i class="flaticon-unlink"></i>
                 </div>
-                <div class="post-media pitem item-w1 item-h1 cat2">
-                    <a href="uploads/e2.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e2.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Shreya Ghosal<small>Indore</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat1">
-                    <a href="uploads/e3.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e3.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Gaurav Kapoor <small>Mumbai</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat4">
-                    <a href="uploads/e4.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e4.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Prithvi Theatre <small>Date</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat3">
-                    <a href="uploads/e5.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e5.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Old Jodhpur Walk<small>Date</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat2">
-                    <a href="uploads/e6.jpg"prettyPhoto[gal]">
-                        <img src="uploads/e6.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Rahgir <small>Ahemdabad</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat1">
-                    <a href="uploads/e7.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e7.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Bassi<small>Delhi</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat4">
-                    <a href="uploads/e8.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e8.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Book Reading <small>Date</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="post-media pitem item-w1 item-h1 cat3">
-                    <a href="uploads/e9.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e9.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Ahemdabad Walk <small>Date</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="post-media pitem item-w1 item-h1 cat2">
-                    <a href="uploads/e10.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/e10.jpg" alt="" class="img-responsive">
-                        <div>
-                            <h3>Sunidhi Chauhan<small>Ahemdabad</small></h3>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
-            </div><!-- end portfolio -->
-        </div><!-- end container -->
+            </a>
+        </div>
+    </c:forEach>
+</div>
     </div><!-- end section -->
 	
 	
@@ -238,7 +130,7 @@
                         </div>
 
                         <ul class="footer-links hov">
-                            <li><a href="/index.html">Home <span class="icon icon-arrow-right2"></span></a></li>
+                            <li><a href="/index.jsp">Home <span class="icon icon-arrow-right2"></span></a></li>
 							<li><a href="about-us.html">About <span class="icon icon-arrow-right2"></span></a></li>
 							<li><a href="events.html">Events <span class="icon icon-arrow-right2"></span></a></li>
 							<li><a href="contact.html">Contact <span class="icon icon-arrow-right2"></span></a></li>
@@ -288,4 +180,4 @@
     <script src="js/hoverdir.js"></script>    
 
 </body>
-</html>
+</html>	

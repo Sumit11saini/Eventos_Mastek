@@ -46,8 +46,11 @@ public class CustomerLoginServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("IsOrganizer", false);	
 				session.setAttribute("userRole","Customer");
+				String customer_name=udao.getCustomerName(Email);
+				session.setAttribute("customer_name",customer_name);
+				System.out.println(customer_name);
 
-				RequestDispatcher rd = request.getRequestDispatcher("index.html");
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 
 				rd.forward(request, response);
 

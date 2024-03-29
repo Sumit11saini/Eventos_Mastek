@@ -153,6 +153,40 @@ public class EventsDAOImpl implements EventsDAOInterface {
 
 		return events;
 	}
+    
+    
+    
+    @Override
+    public List<Events> getAllEvents() throws SQLException{
+    	System.out.println("get all event dao called");
+        Connection con = dbutil.provideConnection();
+
+        List<Events> events=new ArrayList<>();
+        try {
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM tbl_events");
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Events event = new Events();
+            event.setEventId(rs.getInt("event_id"));
+            event.setEventName(rs.getString("event_name"));
+            event.setEventVenue(rs.getString("event_venue"));
+            event.setEventCategory(rs.getString("event_category"));
+            event.setEventCity(rs.getString("event_city"));
+            event.setEventDateTime(rs.getTimestamp("event_date_time"));
+            event.setEventDescription(rs.getString("event_description"));
+            event.setEventBanner(rs.getString("event_banner"));
+            event.setOrganizerId(rs.getInt("organizer_id"));
+            events.add(event);
+        }
+        
+        } 
+        catch (SQLException e) {
+			e.printStackTrace();
+			}
+        
+        return events;
+        }
+
 
 
     @Override

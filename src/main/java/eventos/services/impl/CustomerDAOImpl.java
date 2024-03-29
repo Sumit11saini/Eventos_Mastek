@@ -129,8 +129,8 @@ public class CustomerDAOImpl implements CustomerDAOInterface {
 			rs = ps.executeQuery();
 
 			if(rs.next()) {
-                String passwordHash = rs.getString("customerPasswordHash");
-                String passwordSalt = rs.getString("customerPasswordSalt");
+                String passwordHash = rs.getString("customer_password_hash");
+                String passwordSalt = rs.getString("customer_password_salt");
                 
                 System.out.println("Password Hash: " + passwordHash);
                 System.out.println("Password Salt: " + passwordSalt);
@@ -153,8 +153,31 @@ public class CustomerDAOImpl implements CustomerDAOInterface {
 	}
 
 	@Override
-	public Customers getCustomerDetails(String emailId, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getCustomerName(String emailId) {
+		String customer_name = null; // Default value if organizer is not found
+
+	    try (Connection db = dbutil.provideConnection();
+	         PreparedStatement statement = db.prepareStatement("SELECT CUSTOMER_NAME FROM tbl_customers WHERE customer_email=?")) {
+
+	        // Set email parameter in the prepared statement
+	        statement.setString(1, emailId);
+
+	        // Execute the query
+	        try (ResultSet resultSet = statement.executeQuery()) {
+	            // If a record is found, retrieve organizer_name
+	            if (resultSet.next()) {
+	                customer_name = resultSet.getString("customer_name");
+	                System.out.println(customer_name);
+	              
+	            }
+	        }
+	    } catch (SQLException e) {
+	        // Handle any SQL errors
+	        e.printStackTrace();
+	    }
+
+	    return customer_name;
 	}
+
+
 }

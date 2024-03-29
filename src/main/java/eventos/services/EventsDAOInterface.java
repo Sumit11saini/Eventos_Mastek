@@ -3,6 +3,7 @@ package eventos.services;
 import java.sql.Timestamp;
 import java.util.List;
 import java.sql.Date;
+import java.sql.SQLException;
 
 import eventos.models.Events;
 import eventos.models.TicketType;
@@ -30,6 +31,8 @@ public interface EventsDAOInterface {
 			Timestamp eventDateTime, String eventDescription, String eventBanner, int organizerId);
 	
 	public List<Events> getEventDetailsByOrganizerId(int OrganizerId);
+
+	public List<Events> getAllEvents() throws SQLException;
 
 
 }

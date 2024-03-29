@@ -57,45 +57,47 @@
     <!-- END LOADER -->
     
 	
-   < <header class="header header_style_01">
+    <header class="header header_style_01">
         <nav class="megamenu navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>	
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand nigga" href="index.html"><h1 class="logotxt"><h1>Eventos</h1></h1></a>
+                    <a class="navbar-brand nigga" href="index.jsp"><h1 class="logotxt"><h1>Eventos</h1></h1></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="OrganizerEvents.jsp">Home</a></li>
-                        <li><a href="Organizer-AboutUs.jsp">About us</a></li>
-                        <li><a href="OrganizerContact.jsp">Contact</a></li>
-                        <li><a class="active" href="organizerLogin.html">Login</a></li>     
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="GetAllEventsServlet">Events</a></li>
+                        <li><a href="about-us.jsp">About us</a></li>
+                        <li><a href="contact.jsp">Contact</a></li>
+                        <li><a class="active" href="CustomerLogin.jsp">Login</a></li>     
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+
     
     
    
     <div class="login1"><img src="uploads/login1.webp" alt="" class="loginimg">
         <div class="wrapper">
-            <h2>Organization Login</h2>
-            <form action="organizerLogin" method="post">
+            <h2>Sign in</h2>
+            <form action="CustomerLogin" method="post">
               <!-- <div class="input-box">
                 <input type="text" placeholder="Enter your name" required>
               </div> -->
               <div class="input-box">
-                <input type="text" name="email" id="email" placeholder="Email" required>
+                <input type="text" id="Email" name="Email" placeholder="Email" required>
               </div>
                <div class="input-box">
-                <input type="password"name="password" id="password" placeholder="Password" required>
+                <input type="password" id="Password" name="Password" placeholder="Password" required>
               </div>
               <!-- <div class="input-box">
                 <input type="password" placeholder="Confirm password" required>
@@ -105,14 +107,36 @@
                 <h3> <br>I accept all terms & condition</h3>
               </div> -->
               <div class="input-box button">
-               <a href="OrganizerEvents.jsp"> <input type="Submit" value="Login"> </a>
+                <input type="Submit" value="Login">
               </div>
               <div class="text">
-                <h3>Do not have an account? <a href="organizerRegister.html">Register now</a></h3>
+                <h3>Do not have an account? <a href="CustomerRegister.html">Register now</a></h3>
               </div>
             </form>
-          </div>
-    </div>
+          </div> 
+    </div> <br><br><br>
+
+    <div id="about" class="section wb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="message-box">
+                        <h4>Want to list your event?</h4>
+                        <h2>Organization Login</h2>
+                        <p class="lead">As an organization, unlock the full potential of our platform by registering and logging in to seamlessly list your events and manage ticket sales. Whether you're hosting conferences, workshops, or social gatherings, our user-friendly interface empowers you to showcase your events with ease.
+                        </p>
+
+                        <a href="organizerLogin.html"><button class="button-40" role="button">Login</button></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+
+                
+            </div><!-- end row -->
+
+            
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
 
 
 
@@ -136,10 +160,11 @@
                         </div>
 
                         <ul class="footer-links hov">
-                            <li><a href="OrganizerEvents.jsp">Home <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="Organizer-AboutUs.jsp">About <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="OrganizerContact.jsp">Contact <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="organizerLogin.html">Login <span class="icon icon-arrow-right2"></span></a></li>
+                            <li><a href="index.jsp">Home <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="about-us.jsp">About <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="GetAllEventsServlet">Events <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="contact.jsp">Contact <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="CustomerLogin.jsp">Login <span class="icon icon-arrow-right2"></span></a></li>
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
@@ -161,9 +186,9 @@
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
             </div><!-- end row -->
-            <div class="organreg">
-              <a href="CustomerLogin.jsp"><h4>Login as an Customer</h4></a>
-            </div>
+            <!-- <div class="organreg">
+              <a href="login2.html"><h4>Login as an Organization</h4></a>
+            </div> -->
         </div><!-- end container -->
         
     </footer><!-- end footer -->
@@ -188,5 +213,6 @@
     <script src="js/custom.js"></script>
     <script src="js/portfolio.js"></script>
     <script src="js/hoverdir.js"></script>    
+
 </body>
 </html>

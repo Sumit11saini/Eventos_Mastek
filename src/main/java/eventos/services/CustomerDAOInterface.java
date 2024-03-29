@@ -16,7 +16,6 @@ public interface CustomerDAOInterface {
 
 	public String isValidCredential(String emailId, String password);
 
-	public Customers getCustomerDetails(String emailId, String password);
-
+	public String getCustomerName(String emailId);
 	
 }

@@ -72,18 +72,18 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand nigga" href="index.html"><h1
+					<a class="navbar-brand nigga" href="index.jsp"><h1
 							class="logotxt">
 							<h1>Eventos</h1>
 						</h1></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about-us.html">About us</a></li>
-						<li><a href="events.html">Events</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li><a class="active" href="CustomerLogin.html">Login</a></li>
+						<li><a href="index.jsp">Home</a></li>
+						<li><a href="GetAllEventsServlet">Events</a></li>
+						<li><a href="about-us.jsp">About us</a></li>
+						<li><a href="contact.jsp">Contact</a></li>
+						<li><a class="active" href="CustomerLogin.jsp">Login</a></li>
 					</ul>
 				</div>
 			</div>

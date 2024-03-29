@@ -107,7 +107,7 @@
 
 				<h4 id="Ah4">Account Settings</h4>
 				<button id="openEditProfileFormBtn">Edit Profile</button>
-				<button id="logoutBtn">Logout</button>
+				<a href="OrganizerLogoutServlet"><button id="logoutBtn">Logout</button></a>
 				<!-- New logout button -->
 			</div>
 			<!-- end title -->
