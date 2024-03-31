@@ -1,15 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page import="com.google.gson.Gson" %>
+<%@ page import="java.util.List" %>
+<%@ page import="eventos.models.TicketType" %>
+<%@ page import="eventos.models.Booking" %>
+<%@ page import="eventos.services.impl.EventReportDAOImpl" %>
+
+
 
 
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
 <!-- Basic -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <!-- Mobile Metas -->
 <meta name="viewport"
-	content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Site Metas -->
 <title>Eventos</title>
@@ -17,19 +27,15 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<!-- Site Icons -->
-<link rel="apple-touch-icon" sizes="180x180"
-	href="/apple-touch-icon.png">
+<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32"
 	href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16"
-	href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- Site CSS -->
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet"href="OrganizerParticularEvent.css">
 <!-- Responsive CSS -->
 <link rel="stylesheet" href="css/responsive.css">
 <!-- Custom CSS -->
@@ -42,74 +48,35 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style>
+</style>
 </head>
 <body>
 
-	<!-- LOADER -->
-	<div id="preloader">
-		<div class="loader">
-			<div class="loader__bar"></div>
-			<div class="loader__bar"></div>
-			<div class="loader__bar"></div>
-			<div class="loader__bar"></div>
-			<div class="loader__bar"></div>
-			<div class="loader__ball"></div>
-		</div>
-	</div>
-	<!-- end loader -->
-	<!-- END LOADER -->
+		<%@ include file="navbar.jsp"%>
 
-
-	<%@ include file="navbar.jsp"%>
-
-
-
-	<div id="contact" class="section wb">
+	<div id="about" class="section wb">
 		<div class="container">
-			<div class="section-title text-center">
-				<h3>Get in touch</h3>
-				<p class="lead">Get in touch with us! We're here to assist you
-					every step of the way. Whether you have questions about our
-					services, need help with an existing event listing, or just want to
-					say hello, we'd love to hear from you.</p>
-			</div>
-			<!-- end title -->
-
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="contact_form">
-						<div id="message"></div>
-						<form id="contactform" class="row" action="contact.php"
-							name="contactform" method="post">
-							<fieldset class="row-fluid">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="text" name="first_name" id="first_name"
-										class="form-control" placeholder="First Name">
-								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="text" name="last_name" id="last_name"
-										class="form-control" placeholder="Last Name">
-								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="email" name="email" id="email"
-										class="form-control" placeholder="Your Email">
-								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="text" name="phone" id="phone" class="form-control"
-										placeholder="Your Phone">
-								</div>
+				<div class="col-md-6">
+					<div class="message-box">
+						<h2 class="red">${event.eventName}</h2>
+						<h4>${event.eventCity},${event.eventVenue}</h4>
+						<h4>Date And Time:${event.eventDateTime}</h4>
+						<p class="lead">${event.eventDescription}</p>
+						
+						<br>
 
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<textarea class="form-control" name="comments" id="comments"
-										rows="6" placeholder="Give us more details.."></textarea>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
-									<button class="button-40" role="button">Send</button>
-								</div>
-							</fieldset>
-						</form>
 					</div>
+					<!-- end messagebox -->
+				</div>
+				<!-- end col -->
+				<div class="col-md-6">
+					<div class="post-media wow fadeIn">
+						<img src="${event.eventBanner}" alt=""
+							class="img-responsive img-rounded">
+					</div>
+					<!-- end media -->
 				</div>
 				<!-- end col -->
 			</div>
@@ -118,8 +85,54 @@
 		<!-- end container -->
 	</div>
 	<!-- end section -->
-	<br>
+	
+<div id="ticket-types" class="row  justify-content-center">
+    <c:forEach items="${ticketTypes}" var="ticketType">
+        <div class="col-md-3">
+            <div class="pricing-table">
+                <div class="pricing-title">
+                    <h3>${ticketType.ticketType}</h3> <!-- Displaying ticket type -->
+                </div>
+                <div class="pricing-info">
+                    <div class="price">₹${ticketType.ticketPrice}</div> <!-- Displaying ticket price -->
+                    <div class="total-tickets">Total Tickets Left: ${ticketType.ticketQuantity}</div> <!-- Displaying total tickets left -->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </c:forEach>
+</div>
 
+
+	
+<section id="summary" class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="summary-box total-attendees">
+                    <h3>Total Attendees</h3>
+                    <p id="totalAttendees">${SalesReports[0]}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="summary-box available-tickets">
+                    <h3>Available Tickets</h3>
+                    <p id="availableTickets">${SalesReports[1]}</p>
+                </div>	
+            </div>
+            <div class="col-md-4">
+                <div class="summary-box total-revenue">
+                    <h3>Total Revenue</h3>
+                    <p id="totalRevenue">₹${SalesReports[2]}</p>
+                </div>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end section -->
+
+	
+	
+	
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
@@ -146,13 +159,15 @@
 						</div>
 
 						<ul class="footer-links hov">
-							<li><a href="OrganizerEvents.jsp">Home <span
+							<li><a href="/index.html">Home <span
 									class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="Organizer-AboutUs.jsp">About <span
+							<li><a href="about-us.html">About <span
 									class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="OrganizerContact.jsp">Contact <span
+							<li><a href="events.html">Events <span
 									class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="organizerLogin.html">Login <span
+							<li><a href="contact.html">Contact <span
+									class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="login.html">Login <span
 									class="icon icon-arrow-right2"></span></a></li>
 						</ul>
 						<!-- end links -->
@@ -194,23 +209,27 @@
 					<p class="footer-company-name">
 						All Rights Reserved. &copy; 2024 <a href="#">Eventos</a>
 				</div>
-
-
 			</div>
 		</div>
 		<!-- end container -->
 	</div>
 	<!-- end copyrights -->
+	
+	
 
 	<a href="#" id="scroll-to-top" class="dmtop global-radius"><i
 		class="fa fa-angle-up"></i></a>
+		
+		
+
+		
 
 	<!-- ALL JS FILES -->
 	<script src="js/all.js"></script>
 	<!-- ALL PLUGINS -->
 	<script src="js/custom.js"></script>
-	<script src="js/portfolio.js"></script>
-	<script src="js/hoverdir.js"></script>
+
 
 </body>
 </html>
+

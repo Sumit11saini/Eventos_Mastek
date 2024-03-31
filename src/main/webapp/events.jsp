@@ -95,12 +95,12 @@
 
            <div id="da-thumbs" class="da-thumbs portfolio">
     <c:forEach var="event" items="${events}">
-        <div class="post-media pitem item-w1 item-h1 ${event.eventCategory}">
-            <a href="${event.eventBanner}" data-rel="prettyPhoto[gal]">
-                <img src="${event.getEventBanner()}" alt="" class="img-responsive">
-                <div>
-                    <h3>${event.eventName} <small>${event.eventCity}</small></h3>
-                    <i class="flaticon-unlink"></i>
+        	<div class="post-media pitem item-w1 item-h1 cat1">
+ 			<a href="EventDetailsServlet?eventId=${event.eventId}" >
+              <img src="${event.getEventBanner()}" alt="" class="img-responsive">
+              <div>
+              <h3>${event.eventName} <small>${event.eventCity}</small></h3>
+                  <i class="flaticon-unlink"></i>
                 </div>
             </a>
         </div>
@@ -130,11 +130,11 @@
                         </div>
 
                         <ul class="footer-links hov">
-                            <li><a href="/index.jsp">Home <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="about-us.html">About <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="events.html">Events <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="contact.html">Contact <span class="icon icon-arrow-right2"></span></a></li>
-							<li><a href="login.html">Login <span class="icon icon-arrow-right2"></span></a></li>
+                            <li><a href="index.jsp">Home <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="about-us.jsp">About <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="GetAllEventsServlet">Events <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="contact.jsp">Contact <span class="icon icon-arrow-right2"></span></a></li>
+							<li><a href="CustomerLogin.html">Login <span class="icon icon-arrow-right2"></span></a></li>
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->

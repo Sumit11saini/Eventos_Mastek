@@ -61,7 +61,7 @@
 						
 						
 						if(session.getAttribute("organizerName") != null) out.print("OrganizerHome.jsp");
-						else out.print("organizerLogin.html");
+						else out.print("organizerLogin.jsp");
 						%>
 						">
 						<%

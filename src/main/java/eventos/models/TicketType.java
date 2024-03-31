@@ -40,7 +40,7 @@ public class TicketType {
     private int ticketTypeId; // Unique ticket id
     private int eventId; // Event id for which the ticket is created
     private String ticketType; // Type of the ticket
-    private int ticketPrice; // Price of the ticket
+    private float ticketPrice; // Price of the ticket
     private int ticketQuantity; // Quantity of the ticket
 
 
@@ -56,8 +56,8 @@ public class TicketType {
 	 * @param ticketPrice: double
 	 * @param ticketQuantity: int
 	 */
-    public TicketType(int ticketId, int eventId, String ticketType, int ticketPrice, int ticketQuantity) {
-        this.ticketTypeId = ticketId;
+    public TicketType(int ticketTypeId, int eventId, String ticketType, float ticketPrice, int ticketQuantity) {
+        this.ticketTypeId = ticketTypeId;
         this.eventId = eventId;
         this.ticketType = ticketType;
         this.ticketPrice = ticketPrice;
@@ -83,7 +83,7 @@ public class TicketType {
      * 
      * @return int: ticketTypeId
      */
-    public int getTicketId() {
+    public int getTicketTypeId() {
         return ticketTypeId;
     }
 
@@ -93,7 +93,7 @@ public class TicketType {
 	 * @param ticketId: int
 	 */
     
-    public void setTicketId(int ticketId) {
+    public void setTicketTypeId(int ticketId) {
         this.ticketTypeId = ticketId;
     }
 
@@ -137,7 +137,7 @@ public class TicketType {
      * 
      * @return double: ticketPrice
      */
-    public int getTicketPrice() {
+    public float getTicketPrice() {
         return ticketPrice;
     }
 
@@ -146,7 +146,7 @@ public class TicketType {
 	 * 
 	 * @param ticketPrice: double
 	 */
-    public void setTicketPrice(int ticketPrice) {
+    public void setTicketPrice(float ticketPrice) {
         this.ticketPrice = ticketPrice;
     }
 

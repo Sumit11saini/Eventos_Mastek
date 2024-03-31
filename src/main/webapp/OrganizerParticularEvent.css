@@ -1,0 +1,137 @@
+.ticket-category {
+    background-color: white;
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .ticket-category button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .ticket-category input[type="number"] {
+    width: 50px;
+  }
+  
+  /* Ticket Category styles */
+  .ticket-category {
+    margin-bottom: 20px; /* Add margin between ticket category containers */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .ticket-category h3 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Total Price Container styles */
+  #totalPriceContainer {
+    width: 100%;
+    background-color: #262b27;
+    text-align: center;
+  }
+  
+  #totalPriceContainer h3 {
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #ddd;
+  }
+  
+  /* Pay button styles */
+  #payBtn {
+    font-size: 1.5rem;
+    padding: 10px 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-bottom: 40px;
+  }
+  
+  #payBtn:hover {
+    background-color: #28a745; /* Change color on hover */
+  }
+  
+  #ticketCategories{
+      padding: 50px;
+      background-color: #262b27;
+      width: 100%;
+  }
+  
+  .btn-minus {
+      background-color: red; /* Set background color of minus button to red */
+      color: white;
+  }
+  
+  .btn-plus {
+      background-color: green; /* Set background color of plus button to green */
+      color: white;
+  }
+
+/* Add this CSS to your existing stylesheet or in a new stylesheet */
+
+/* Styling for summary section */
+#summary .summary-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#summary h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#summary p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    margin: 0;
+}
+
+
+/* Styling for ticket category containers */
+#ticket-types .pricing-table {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#ticket-types .pricing-title h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#ticket-types .pricing-info {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#ticket-types .price {
+    font-weight: bold;
+}
+
+#ticket-types .tickets-booked {
+    color: #888;
+}
+
+
+#ticket-types{
+    background-color: #922a0e;
+}
+
+#summary{
+    background-color: rgb(255, 255, 255);
+}

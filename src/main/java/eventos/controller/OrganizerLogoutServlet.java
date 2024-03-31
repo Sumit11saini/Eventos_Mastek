@@ -16,6 +16,12 @@ public class OrganizerLogoutServlet extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
-        response.sendRedirect("organizerLogin.html"); // Redirect to the login page
+        
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        response.setDateHeader("Expires", 0); // Proxies.
+        
+        
+        response.sendRedirect("organizerLogin.jsp"); // Redirect to the login page
     }
 }

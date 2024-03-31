@@ -2,11 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<%@page import="eventos.models.Events"%>
-<%@page import="java.util.List"%>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +100,7 @@
 		 <div id="da-thumbs" class="da-thumbs portfolio">
     <c:forEach var="event" items="${eventsList}">
         <div class="post-media pitem item-w1 item-h1 cat1">
-            <a href="${event.eventBanner}" data-rel="prettyPhoto[gal]">
+				<a href="OrgEventDetailsServlet?eventId=${event.eventId}" >
                 <img src="${event.eventBanner}" alt="" class="img-responsive">
                 <div>
                     <h3>${event.eventName} <small>${event.eventCity}</small></h3>

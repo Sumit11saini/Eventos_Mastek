@@ -34,5 +34,7 @@ public interface EventsDAOInterface {
 
 	public List<Events> getAllEvents() throws SQLException;
 
+	public Events getEventDetailsByEventId(int eventId) throws SQLException;
+
 
 }

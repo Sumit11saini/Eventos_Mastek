@@ -56,7 +56,7 @@ public class EventsDAOImpl implements EventsDAOInterface {
                         psTicketType.setInt(1, eventId);
                         psTicketType.setString(2, ticketType.getTicketType());
                         System.out.println(ticketType.getTicketType());
-                        psTicketType.setInt(3, ticketType.getTicketPrice());
+                        psTicketType.setFloat(3, ticketType.getTicketPrice());
                         System.out.println(ticketType.getTicketPrice());
                         psTicketType.setInt(4, ticketType.getTicketQuantity());
                         System.out.println(ticketType.getTicketQuantity());
@@ -186,6 +186,37 @@ public class EventsDAOImpl implements EventsDAOInterface {
         
         return events;
         }
+    
+    
+    @Override
+	public Events getEventDetailsByEventId(int eventId) throws SQLException  {
+    	
+		Connection con = dbutil.provideConnection();
+
+		
+		System.out.println("getEventDetailsByEventId called");
+		    Events event = null;
+	        String query = "SELECT * FROM tbl_events WHERE event_id = ?";
+	        PreparedStatement statement = con.prepareStatement(query);
+	        statement.setInt(1,eventId);
+	        ResultSet resultSet = statement.executeQuery();
+	        if (resultSet.next()) {
+                event = new Events();
+                event.setEventId(resultSet.getInt("event_id"));
+                event.setEventName(resultSet.getString("event_name"));
+                event.setEventVenue(resultSet.getString("event_venue"));
+                event.setEventCategory(resultSet.getString("event_category"));
+                event.setEventCity(resultSet.getString("event_city"));
+                event.setEventDateTime(resultSet.getTimestamp("event_date_time"));
+                event.setEventDescription(resultSet.getString("event_description"));
+                event.setEventBanner(resultSet.getString("event_banner"));
+                event.setOrganizerId(resultSet.getInt("organizer_id"));
+                System.out.println("data fetched to event object");
+            }
+	    	System.out.println("getEventDetailsByEventId ended");
+		return event;
+	}
+  
 
 
 

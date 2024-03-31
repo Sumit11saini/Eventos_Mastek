@@ -38,8 +38,6 @@ public class OrgLoginVerifyServlet extends HttpServlet {
 			String organizerName=organizerDAOImpl.getOrganizerNameByEmail(email);
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("IsOrganizer", true);	
-			session.setAttribute("userRole","Organizer");
 			session.setAttribute("organizerId", organizerId);
 			session.setAttribute("organizerName", organizerName);
 			System.out.println(session.getAttribute("organizerName"));

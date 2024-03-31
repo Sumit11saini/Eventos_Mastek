@@ -1,9 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
     <!-- Basic -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    
+     
    
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -57,7 +64,7 @@
     <!-- END LOADER -->
     
 	
-   < <header class="header header_style_01">
+    <header class="header header_style_01">
         <nav class="megamenu navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -71,7 +78,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="OrganizerEvents.jsp">Home</a></li>
+                        <li><a href="OrganizerEventsServlet">Home</a></li>
                         <li><a href="Organizer-AboutUs.jsp">About us</a></li>
                         <li><a href="OrganizerContact.jsp">Contact</a></li>
                         <li><a class="active" href="organizerLogin.html">Login</a></li>     

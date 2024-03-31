@@ -126,7 +126,7 @@
                         <p class="lead">As an organization, unlock the full potential of our platform by registering and logging in to seamlessly list your events and manage ticket sales. Whether you're hosting conferences, workshops, or social gatherings, our user-friendly interface empowers you to showcase your events with ease.
                         </p>
 
-                        <a href="organizerLogin.html"><button class="button-40" role="button">Login</button></a>
+                        <a href="organizerLogin.jsp"><button class="button-40" role="button">Login</button></a>
                     </div><!-- end messagebox -->
                 </div><!-- end col -->
 
